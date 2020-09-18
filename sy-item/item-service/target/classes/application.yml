@@ -1,0 +1,14 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: sy-item-mall
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.79.1:8848
+management:
+  endpoint:
+    web:
+     exposure:
+       include: '*'
