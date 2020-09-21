@@ -5,15 +5,17 @@
     <parent>
         <artifactId>symall</artifactId>
         <groupId>com.sy.mall</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sy-item</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>item-service</module>
+        <module>sy-interface</module>
     </modules>
-    <packaging>pom</packaging>
+
 
 </project>

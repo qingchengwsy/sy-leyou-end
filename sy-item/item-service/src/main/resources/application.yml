@@ -7,8 +7,27 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.79.1:8848
+  datasource:
+    #数据源
+    url: jdbc:mysql://127.0.0.1:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
+    username: root
+    password: qing
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    #连接池
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: sy-hikariCP
 management:
-  endpoint:
+  endpoints:
     web:
-     exposure:
-       include: '*'
+      exposure:
+        include: "*"
+logging:
+  level:
+    com.sy.qing: debug
