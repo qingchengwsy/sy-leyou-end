@@ -8,13 +8,22 @@
     <modules>
         <module>sy-common</module>
         <module>sy-item</module>
+        <module>sy-gateway</module>
     </modules>
 
     <name>sy-leyou-end</name>
     <packaging>pom</packaging>
 
     <properties>
-        <spring.cloud.version>Greenwich.SR6</spring.cloud.version>
+        <!--设置项目编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!--设置JDK 版本-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--spring-cloud and spring-cloud-alibaba 版本控制-->
+        <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
         <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
     </properties>
 
@@ -42,6 +51,8 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
+
+
     </dependencyManagement>
 
 
