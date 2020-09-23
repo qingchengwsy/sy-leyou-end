@@ -1,31 +1,37 @@
 package com.sy.qing.entity;
 
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 类目entity
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value = "tb_brand")
-public class brand {
+@TableName(value = "tb_category")
+public class Category {
 
-    /**品牌id*/
+    /**类目id*/
     @TableField(value = "id")
     private Integer id;
 
-    /**品牌名称*/
+    /**类目名称*/
     @TableField(value = "name")
     private String name;
 
-    /**品牌图片地址*/
-    @TableField(value = "image")
-    private String image;
+    /**父类目id*/
+    @TableField(value = "parentId")
+    private Integer parentId;
 
-    /**品牌首字符*/
-    @TableField(value = "letter")
-    private Character letter;
+    /**是否为父节点*/
+    @TableField(value = "isParent")
+    private Character isParent;
+
+    /**排序指数*/
+    @TableField(value = "sort")
+    private Integer sort;
 }

@@ -1,4 +1,4 @@
 package com.sy.qing.service;
 
-public class aa {
+public interface BrandService {
 }
