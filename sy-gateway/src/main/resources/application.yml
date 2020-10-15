@@ -8,3 +8,14 @@ spring:
       discovery:
         # 指定nacos server的地址
         server-addr: 192.168.79.1:8848
+    gateway:
+      routes:
+        - id: sy-routh
+          uri: lb://sy-item-mall
+
+
+
+          predicates:
+            - Path=/api/item/**
+          filters:
+            - StripPrefix=2

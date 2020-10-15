@@ -10,7 +10,7 @@ spring:
   datasource:
     #数据源
     url: jdbc:mysql://hadoop000:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
-    username: root
+    username: qing
     password: qing
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
@@ -31,3 +31,6 @@ management:
 logging:
   level:
     com.sy.qing: debug
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true

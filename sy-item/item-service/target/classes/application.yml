@@ -9,8 +9,8 @@ spring:
         server-addr: 192.168.79.1:8848
   datasource:
     #数据源
-    url: jdbc:mysql://127.0.0.1:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
-    username: root
+    url: jdbc:mysql://hadoop000:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
+    username: qing
     password: qing
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
@@ -31,3 +31,6 @@ management:
 logging:
   level:
     com.sy.qing: debug
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
