@@ -1,15 +1,19 @@
 package com.sy.qing.service.imple;
 
+import com.sy.qing.Vo.BrandVo;
 import com.sy.qing.entity.Brand;
 import com.sy.qing.service.BrandService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 
 @SpringBootTest
+@RunWith(SpringRunner.class)
 public class BrandServiceImpleTest {
 
     @Autowired
@@ -17,7 +21,6 @@ public class BrandServiceImpleTest {
 
     @Test
     public void selectPageList() {
-        List<Brand> id = brandService.selectPageList("ËÕÄþ", 1, 20, "id", true);
-        System.out.println(id);
+        BrandVo id =brandService.selectPageList("æµ·", Long.parseLong("0"), Long.parseLong("10"), "id", true);
     }
 }

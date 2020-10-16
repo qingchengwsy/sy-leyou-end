@@ -14,7 +14,7 @@ public interface CategoryService {
      * @param pid
      * @return
      */
-    List<Category> categoryList(Integer pid);
+    List<Category> categoryList(Long pid);
 
     /**
     * @Description: 添加节点
@@ -32,7 +32,7 @@ public interface CategoryService {
     * @Author: qing
     * @Date: 2020/10/15
     */
-    Boolean updateOne(Integer id,String name);
+    Boolean updateOne(Long id,String name);
 
     /**
     * @Description: 删除节点
@@ -41,5 +41,14 @@ public interface CategoryService {
     * @Author: qing
     * @Date: 2020/10/15
     */
-    Boolean deleteOne(Integer id);
+    Boolean deleteOne(Long id);
+
+    /**
+    * @Description: 根据品牌id 查询类目
+    * @Param: [brandId]
+    * @return: java.lang.Long
+    * @Author: qing
+    * @Date: 2020/10/16
+    */
+    Long getOneCId(Long brandId);
 }

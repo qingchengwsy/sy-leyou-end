@@ -18,13 +18,13 @@ public class Category {
 
     /**类目id*/
     @TableId(type = IdType.INPUT)
-    private Integer id;
+    private Long id;
 
     /**类目名称*/
     private String name;
 
     /**父类目id , 顶级类目为0*/
-    private Integer parentId;
+    private Long parentId;
 
     /**是否为父节点*/
     private Boolean isParent;

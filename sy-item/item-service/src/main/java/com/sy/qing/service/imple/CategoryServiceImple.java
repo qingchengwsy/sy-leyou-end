@@ -3,12 +3,16 @@ package com.sy.qing.service.imple;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sy.qing.entity.Category;
+import com.sy.qing.entity.CategoryAndBrand;
+import com.sy.qing.mapper.BrandAndCategortMapper;
 import com.sy.qing.mapper.CategoryMapper;
 import com.sy.qing.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,8 +23,11 @@ public class CategoryServiceImple implements CategoryService {
     @Autowired
     private CategoryMapper categoryMapper;
 
+    @Autowired
+    private BrandAndCategortMapper brandAndCategortMapper;
+
     @Override
-    public List<Category> categoryList(Integer pid) {
+    public List<Category> categoryList(Long pid) {
         QueryWrapper<Category> wrapper=new QueryWrapper<>();
         wrapper.eq("parent_id",pid);
         List<Category> category = categoryMapper.selectList(wrapper);
@@ -34,7 +41,7 @@ public class CategoryServiceImple implements CategoryService {
         Integer count = categoryMapper.selectCount(wrapper);
         if (count==0){
             int insert = categoryMapper.insert(category);
-            if (insert>0){
+            if (insert==1){
                 return true;
             }
         }
@@ -43,7 +50,7 @@ public class CategoryServiceImple implements CategoryService {
     }
 
     @Override
-    public Boolean updateOne(Integer id, String name) {
+    public Boolean updateOne(Long id, String name) {
         Category category = categoryMapper.selectById(id);
         category.setName(name);
         UpdateWrapper<Category> wrapper=new UpdateWrapper<>();
@@ -56,11 +63,12 @@ public class CategoryServiceImple implements CategoryService {
         return false;
     }
 
+    @Transactional
     @Override
-    public Boolean deleteOne(Integer id) {
+    public Boolean deleteOne(Long id) {
         List<Category> categories = categoryList(id);
         if (CollectionUtils.isNotEmpty(categories)){
-            List<Integer> categoryIds = categories.stream()
+            List<Long> categoryIds = categories.stream()
                     .map(Category::getId).collect(Collectors.toList());
             categoryMapper.deleteBatchIds(categoryIds);
         }
@@ -68,6 +76,14 @@ public class CategoryServiceImple implements CategoryService {
         if (i==1){
             return true;
         }
-        return false;
+        throw new RuntimeException("删除失败,{}"+id);
+    }
+
+    @Override
+    public Long getOneCId(Long brandId) {
+        QueryWrapper<CategoryAndBrand> wrapper=new QueryWrapper<>();
+        wrapper.eq("brand_id",brandId);
+        CategoryAndBrand categoryAndBrand = brandAndCategortMapper.selectById(wrapper);
+        return categoryAndBrand.getCategoryId();
     }
 }

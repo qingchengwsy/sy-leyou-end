@@ -1,7 +1,7 @@
 package com.sy.qing.service;
 
+import com.sy.qing.Vo.BrandVo;
 import com.sy.qing.entity.Brand;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -11,11 +11,20 @@ import java.util.List;
 public interface BrandService {
 
     /**
-    * @Description: 分页查询品牌
+    * @Description: 分页并且模糊查询查询品牌
     * @Param: [key, page, rows, sortBy, desc] [搜索条件,当前页,每页大小,排序字段,是否降序]
     * @return: java.util.List<com.sy.qing.entity.Brand>
     * @Author: qing
     * @Date: 2020/10/15
     */
-    List<Brand> selectPageList(String key, Integer page, Integer rows, String sortBy, Boolean desc);
+    BrandVo selectPageList(String key, Long page, Long rows, String sortBy, Boolean desc);
+
+  /**
+  * @Description: 新增品牌
+  * @Param: [name, image, cids, cids1]
+  * @return: java.lang.Boolean
+  * @Author: qing
+  * @Date: 2020/10/16
+  */
+    Boolean brand(String name, String image, Long cids, Character letter);
 }

@@ -18,7 +18,7 @@ public class CategoryController {
 
 
     @GetMapping("list")
-    public List<Category> categoryList(@RequestParam("pid") Integer pid){
+    public List<Category> categoryList(@RequestParam("pid") Long pid){
         if (pid ==null){
             throw new RuntimeException("pid 类目id is not empty");
         }
@@ -31,14 +31,13 @@ public class CategoryController {
     }
 
     @PostMapping("update")
-    public Boolean categoryUpdate(@RequestParam("id") Integer id,
+    public Boolean categoryUpdate(@RequestParam("id") Long id,
                                   @RequestParam("name") String name){
        return categoryService.updateOne(id, name);
     }
 
     @GetMapping("delete/{id}")
-    public Boolean categoryDelete(@PathVariable("id") Integer id){
-        System.out.println(id);
+    public Boolean categoryDelete(@PathVariable("id") Long id){
         return categoryService.deleteOne(id);
     }
 }

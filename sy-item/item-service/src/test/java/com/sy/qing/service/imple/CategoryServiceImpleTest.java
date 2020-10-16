@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -21,7 +20,13 @@ public class CategoryServiceImpleTest {
 
     @Test
     public void categoryList() {
-        List<Category> categories = categoryService.categoryList(0);
+        List<Category> categories = categoryService.categoryList(0L);
         System.out.println(categories.toString());
+    }
+
+    @Test
+    public void cId(){
+        Long oneCId = categoryService.getOneCId(1317011799115665410L);
+        System.out.println(oneCId);
     }
 }

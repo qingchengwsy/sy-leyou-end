@@ -12,9 +12,6 @@ spring:
       routes:
         - id: sy-routh
           uri: lb://sy-item-mall
-
-
-
           predicates:
             - Path=/api/item/**
           filters:
