@@ -13,7 +13,7 @@ import java.util.List;
  * @create: 2020-10-16 10:04
  **/
 @Data
-public class BrandVo implements Serializable {
+public class ResponseVo<T> implements Serializable {
 
     /**当前页*/
     private Long current;
@@ -27,6 +27,6 @@ public class BrandVo implements Serializable {
     /**总记录数*/
     private Long total;
 
-    /**List<品牌>*/
-    private List<Brand> brands;
+    /**List<T>*/
+    private List<T> record;
 }

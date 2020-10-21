@@ -1,10 +1,12 @@
 package com.sy.qing.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.Date;
 
@@ -55,10 +57,10 @@ public class Spu {
     private Character valid;
 
     /**添加时间*/
-    @TableField(value = "create_time")
+    @TableField(value = "create_time",fill = FieldFill.INSERT)
     private Date createTime;
 
     /**最后修改时间*/
-    @TableField(value = "last_update_time")
+    @TableField(value = "last_update_time",fill = FieldFill.UPDATE)
     private Date lastUpdateTime;
 }

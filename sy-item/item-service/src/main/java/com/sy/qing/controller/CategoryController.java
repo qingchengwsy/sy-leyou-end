@@ -40,4 +40,9 @@ public class CategoryController {
     public Boolean categoryDelete(@PathVariable("id") Long id){
         return categoryService.deleteOne(id);
     }
+
+    @GetMapping("bid/{id}")
+    public List<Long> getOne(@PathVariable("id") Long id){
+       return categoryService.getOne(id);
+    }
 }

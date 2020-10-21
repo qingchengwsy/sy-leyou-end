@@ -2,7 +2,7 @@ server:
   port: 9001
 spring:
   application:
-    name: sy-item-mall
+      name: sy-item-mall
   cloud:
     nacos:
       discovery:

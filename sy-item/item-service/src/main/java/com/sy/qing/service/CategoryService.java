@@ -44,11 +44,20 @@ public interface CategoryService {
     Boolean deleteOne(Long id);
 
     /**
-    * @Description: 根据品牌id 查询类目
+    * @Description: 根据品牌 id 查询类目
     * @Param: [brandId]
     * @return: java.lang.Long
     * @Author: qing
     * @Date: 2020/10/16
     */
-    Long getOneCId(Long brandId);
+    List<Long> getOne(Long brandId);
+
+    /**
+    * @Description: 根据cid3 查询所有上级分类
+    * @Param: [cid3]
+    * @return: java.util.List<com.sy.qing.entity.Category>
+    * @Author: qing
+    * @Date: 2020/10/20
+    */
+    List<Category> getIds(Long cid3);
 }

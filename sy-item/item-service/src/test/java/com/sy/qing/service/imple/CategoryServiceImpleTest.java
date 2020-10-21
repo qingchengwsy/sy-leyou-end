@@ -26,7 +26,13 @@ public class CategoryServiceImpleTest {
 
     @Test
     public void cId(){
-        Long oneCId = categoryService.getOneCId(1317011799115665410L);
+        List<Long> oneCId = categoryService.getOne(1317011799115665410L);
         System.out.println(oneCId);
+    }
+
+    @Test
+    public void cid3(){
+        List<Category> ids = categoryService.getIds(6L);
+        System.out.println(ids.toString());
     }
 }

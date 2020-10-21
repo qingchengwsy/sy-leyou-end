@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -80,10 +81,24 @@ public class CategoryServiceImple implements CategoryService {
     }
 
     @Override
-    public Long getOneCId(Long brandId) {
+    public List<Long> getOne(Long brandId) {
         QueryWrapper<CategoryAndBrand> wrapper=new QueryWrapper<>();
         wrapper.eq("brand_id",brandId);
-        CategoryAndBrand categoryAndBrand = brandAndCategortMapper.selectById(wrapper);
-        return categoryAndBrand.getCategoryId();
+        List<CategoryAndBrand> categoryAndBrand = brandAndCategortMapper.selectList(wrapper);
+        return  categoryAndBrand.stream()
+                .map(CategoryAndBrand::getCategoryId).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List<Category> getIds(Long cid3) {
+        List<Category> categories=new ArrayList<>();
+        Category category = categoryMapper.selectById(cid3);
+        categories.add(category);
+        while (category.getParentId()!=0){
+            category=categoryMapper.selectById(category.getParentId());
+            categories.add(category);
+        }
+        return categories;
     }
 }

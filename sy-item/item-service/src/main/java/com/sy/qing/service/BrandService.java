@@ -1,9 +1,8 @@
 package com.sy.qing.service;
 
-import com.sy.qing.Vo.BrandVo;
+import com.sy.qing.Vo.ResponseVo;
 import com.sy.qing.entity.Brand;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 /**
  * 品牌 service
@@ -17,7 +16,7 @@ public interface BrandService {
     * @Author: qing
     * @Date: 2020/10/15
     */
-    BrandVo selectPageList(String key, Long page, Long rows, String sortBy, Boolean desc);
+    ResponseVo<Brand> selectPageList(String key, Long page, Long rows, String sortBy, Boolean desc);
 
   /**
   * @Description: 新增品牌
@@ -26,5 +25,6 @@ public interface BrandService {
   * @Author: qing
   * @Date: 2020/10/16
   */
-    Boolean brand(String name, String image, Long cids, Character letter);
+    ResponseEntity<Brand> brand(String name, String image, Long cids, Character letter);
+
 }
