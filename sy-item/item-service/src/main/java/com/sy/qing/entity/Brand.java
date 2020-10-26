@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Brand {
 
     /**品牌id*/
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**品牌名称*/

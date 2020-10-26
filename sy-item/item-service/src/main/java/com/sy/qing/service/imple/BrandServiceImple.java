@@ -82,4 +82,19 @@ public class BrandServiceImple implements BrandService {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public Integer del(Long id) {
+        return brandMapper.deleteById(id);
+    }
+
+    @Override
+    public List<Brand> findCategoryAndBrandBycId(Long cId) {
+        QueryWrapper<CategoryAndBrand> wrapper=new QueryWrapper<>();
+        wrapper.eq("category_id",cId);
+        List<CategoryAndBrand> categoryAndBrands = brandAndCategortMapper.selectList(wrapper);
+        List<Long> brandIds= categoryAndBrands.stream()
+                .map(CategoryAndBrand::getBrandId).collect(Collectors.toList());
+        return brandMapper.selectBatchIds(brandIds);
+    }
 }

@@ -4,5 +4,5 @@ import com.sy.qing.service.SkuService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SkuServiceImple implements SkuService {
+public class SkuServiceImpl implements SkuService {
 }

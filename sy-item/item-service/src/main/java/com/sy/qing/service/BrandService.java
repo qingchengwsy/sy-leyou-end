@@ -4,6 +4,8 @@ import com.sy.qing.Vo.ResponseVo;
 import com.sy.qing.entity.Brand;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 /**
  * 品牌 service
  */
@@ -27,4 +29,21 @@ public interface BrandService {
   */
     ResponseEntity<Brand> brand(String name, String image, Long cids, Character letter);
 
+    /**
+    * @Description: 删除品牌
+    * @Param: [id]
+    * @return: java.lang.Integer
+    * @Author: qing
+    * @Date: 2020/10/26
+    */
+    Integer del(Long id);
+
+    /**
+    * @Description: 根据分类查询所有品牌
+    * @Param: [cId]
+    * @return: java.util.List<java.lang.Long>
+    * @Author: qing
+    * @Date: 2020/10/26
+    */
+    List<Brand> findCategoryAndBrandBycId(Long cId);
 }

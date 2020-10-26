@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Category {
 
     /**类目id*/
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**类目名称*/

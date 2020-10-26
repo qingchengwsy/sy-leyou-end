@@ -1,6 +1,8 @@
 package com.sy.qing.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Stock {
 
     /**库存对应的商品sku id*/
-    @TableField(value = "sku_id ")
+    @TableId(type = IdType.AUTO)
     private Integer skuId;
 
     /**可秒杀库存*/

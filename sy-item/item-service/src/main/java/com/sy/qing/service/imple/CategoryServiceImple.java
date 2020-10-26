@@ -87,7 +87,6 @@ public class CategoryServiceImple implements CategoryService {
         List<CategoryAndBrand> categoryAndBrand = brandAndCategortMapper.selectList(wrapper);
         return  categoryAndBrand.stream()
                 .map(CategoryAndBrand::getCategoryId).collect(Collectors.toList());
-
     }
 
     @Override

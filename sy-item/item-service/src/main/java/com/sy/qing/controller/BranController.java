@@ -2,11 +2,16 @@ package com.sy.qing.controller;
 
 import com.sy.qing.Vo.ResponseVo;
 import com.sy.qing.entity.Brand;
+import com.sy.qing.entity.CategoryAndBrand;
 import com.sy.qing.service.BrandService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @program: sy-leyou-end
@@ -37,5 +42,23 @@ public class BranController {
                                        @RequestParam("cids") Long cids,// 类目id
                                        @RequestParam("letter") Character letter) {  //品牌首字母
         return brandService.brand(name,image, cids, letter);
+    }
+
+    @DeleteMapping("page/{id}")
+    public ResponseEntity<Void> del(@PathVariable(value = "id") Long id){
+        Integer del = brandService.del(id);
+        if (del==1){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.valueOf("删除失败！"));
+    }
+
+    @GetMapping("cid/{id}")
+    public ResponseEntity<List<Brand>> findBrandBycId(@PathVariable(value = "id") Long id){
+        List<Brand> categoryAndBrandBycId = brandService.findCategoryAndBrandBycId(id);
+        if (CollectionUtils.isNotEmpty(categoryAndBrandBycId)){
+            return new ResponseEntity<>(categoryAndBrandBycId,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.RESET_CONTENT);
     }
 }
