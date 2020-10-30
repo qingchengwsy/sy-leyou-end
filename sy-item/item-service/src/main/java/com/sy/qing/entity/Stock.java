@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 public class Stock {
 
     /**库存对应的商品sku id*/
-    @TableId(type = IdType.AUTO)
-    private Integer skuId;
+    @TableId(type=IdType.INPUT,value = "sku_id")
+    private Long skuId;
 
     /**可秒杀库存*/
     @TableField(value = "seckill_stock")

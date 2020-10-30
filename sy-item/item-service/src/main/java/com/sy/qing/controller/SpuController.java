@@ -1,5 +1,7 @@
 package com.sy.qing.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.sy.qing.Dto.SpuDto;
 import com.sy.qing.Vo.ResponseVo;
 import com.sy.qing.entity.Spu;
 import com.sy.qing.service.SpuService;
@@ -36,8 +38,12 @@ public class SpuController {
     }
 
     @PostMapping("goods")
-    public ResponseEntity<Void> addGoods(){
-        return null;
+    public ResponseEntity<Void> addGoods(@RequestBody SpuDto spuDto){
+        Boolean aBoolean = spuService.addGoods(spuDto);
+        if (aBoolean){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.valueOf("保存失败"));
     }
 
     @PutMapping("goods")

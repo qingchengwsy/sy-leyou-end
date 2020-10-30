@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 public class SpuDetail {
 
     /**spu id*/
-    @TableId(type = IdType.AUTO)
-    private Integer spuId;
+    @TableId(type=IdType.INPUT,value = "spu_id")
+    private Long spuId;
 
     /**商品描述信息*/
     @TableField(value = "description")

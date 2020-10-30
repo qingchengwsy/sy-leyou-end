@@ -1,6 +1,5 @@
 package com.sy.qing.Vo;
 
-import com.sy.qing.entity.Brand;
 import lombok.Data;
 
 import java.io.Serializable;

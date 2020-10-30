@@ -19,11 +19,11 @@ public class Sku {
 
     /**sku id*/
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**spu id*/
     @TableField(value = "spu_id")
-    private Integer spuId;
+    private Long spuId;
 
     /**商品标题*/
     @TableField(value = "title")
@@ -47,7 +47,7 @@ public class Sku {
 
     /**是否有效，0无效，1有效*/
     @TableField(value = "enable")
-    private Character enable;
+    private Boolean enable;
 
     /**添加时间*/
     @TableField(value = "create_time",fill = FieldFill.INSERT)
@@ -57,4 +57,7 @@ public class Sku {
     @TableField(value = "late_update_time",fill = FieldFill.UPDATE)
     private Date lateUpdateTime;
 
+    /**库存*/
+    @TableField(exist = false)
+    private Integer stock;
 }

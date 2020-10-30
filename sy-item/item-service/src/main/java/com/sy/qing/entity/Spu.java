@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.annotations.Update;
 
 import java.util.Date;
 
@@ -20,7 +19,7 @@ public class Spu {
 
     /**spu id*/
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**标题*/
     @TableField(value = "title")
@@ -32,27 +31,27 @@ public class Spu {
 
     /**1级类目id*/
     @TableField(value = "cid1")
-    private Integer cid1;
+    private Long cid1;
 
     /**2级类目id*/
     @TableField(value = "cid2")
-    private Integer cid2;
+    private Long cid2;
 
     /**3级类目id*/
     @TableField(value = "cid3")
-    private Integer cid3;
+    private Long cid3;
 
     /**商品品牌所属id*/
     @TableField(value = "brand_id")
-    private Integer brandId;
+    private Long brandId;
 
     /**是否上架，0下架，1上架*/
     @TableField(value = "saleable")
-    private Character saleable;
+    private Boolean saleable;
 
     /**是否有效，0已删除，1有效*/
     @TableField(value = "valid")
-    private Character valid;
+    private Boolean valid;
 
     /**添加时间*/
     @TableField(value = "create_time",fill = FieldFill.INSERT)
