@@ -1,12 +1,10 @@
 server:
   port: 9001
 spring:
-  application:
-      name: sy-item-mall
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.79.1:8848
+        server-addr: localhost:8848
   datasource:
     #数据源
     url: jdbc:mysql://hadoop000:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
@@ -30,7 +28,7 @@ management:
         include: "*"
 logging:
   level:
-    com.sy.qing: debug
+    com.sy.qing: info
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true

@@ -9,6 +9,7 @@
         <module>sy-common</module>
         <module>sy-item</module>
         <module>sy-gateway</module>
+        <module>sy-nacos-config</module>
     </modules>
 
     <name>symall</name>
