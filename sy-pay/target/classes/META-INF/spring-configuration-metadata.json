@@ -1,0 +1,60 @@
+{
+  "groups": [
+    {
+      "name": "wechat",
+      "type": "com.qing.sy.config.WeChatAccountConfig",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "wechat.app-id",
+      "type": "java.lang.String",
+      "description": "公众平台开发者账号id",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.key-path",
+      "type": "java.lang.String",
+      "description": "商户证书地址 (退款需要)",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.mch-id",
+      "type": "java.lang.String",
+      "description": "商户号id",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.mch-key",
+      "type": "java.lang.String",
+      "description": "商户密钥",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.notify-url",
+      "type": "java.lang.String",
+      "description": "微信支付异步通知地址",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.secret",
+      "type": "java.lang.String",
+      "description": "开发者账号对应的密钥",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.sub-app-id",
+      "type": "java.lang.String",
+      "description": "服务商模式下的子商户公众账号ID. (服务商)",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.sub-mch-id",
+      "type": "java.lang.String",
+      "description": "服务商模式下的子商户号. (服务商)",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    }
+  ],
+  "hints": []
+}

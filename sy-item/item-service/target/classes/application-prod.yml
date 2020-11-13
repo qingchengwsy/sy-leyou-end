@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 10009
 spring:
   cloud:
     nacos:
@@ -24,7 +24,6 @@ spring:
 management:
   endpoints:
     web:
-
       exposure:
         include: "*"
 logging:

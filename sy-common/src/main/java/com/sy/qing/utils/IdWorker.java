@@ -1,7 +1,5 @@
 package com.sy.qing.utils;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
 import java.net.NetworkInterface;

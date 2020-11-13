@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: prod
+  application:
+    name: sy-item-mall
+
+
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+  profiles: prod
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+  profiles: dev

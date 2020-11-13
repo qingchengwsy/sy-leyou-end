@@ -10,6 +10,7 @@
         <module>sy-item</module>
         <module>sy-gateway</module>
         <module>sy-nacos-config</module>
+        <module>sy-pay</module>
     </modules>
 
     <name>symall</name>

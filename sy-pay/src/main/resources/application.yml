@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: sy-pay
+server:
+  port: 80
+wechat:
+  appId: wx54ca64d176f43bd7
+  secret: 0142eac74deaaa3b4e2457c9690f98dc
+  mch-id: 1577199501
+  mch-key: 4ff25e1abccf0ddc37b625995aa3532f
+  notify-url: http://crm.51daiqi.com/rbcrm_war_exploded/gw/WxPayNotify
