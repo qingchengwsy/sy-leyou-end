@@ -1,15 +1,15 @@
 server:
-  port: 10009
+  port: 9001
 spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: qingsy.top:8848
   datasource:
     #数据源
-    url: jdbc:mysql://hadoop000:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
-    username: qing
-    password: qing
+    url: jdbc:mysql://qingsy.top:3306/symall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&&allowMultiQueries=true&verifyServerCertificate=false
+    username: root
+    password: 123456789qing
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     #连接池
@@ -21,11 +21,6 @@ spring:
       max-lifetime: 45000
       auto-commit: true
       pool-name: sy-hikariCP
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 logging:
   config: classpath:logback-spring.xml
 mybatis-plus:
