@@ -1,3 +1,20 @@
 spring:
   profiles:
     active: prod
+
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 8.129.115.106:8848
+        file-extension: yml
+  profiles: prod
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+  profiles: dev
