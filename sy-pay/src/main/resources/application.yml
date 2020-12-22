@@ -1,11 +1,21 @@
 spring:
   application:
     name: sy-pay
+  thymeleaf:
+    cache: false
 server:
   port: 80
+  servlet:
+    context-path: /rbcrm_war_exploded
 wechat:
-  appId: wx54ca64d176f43bd7
-  secret: 0142eac74deaaa3b4e2457c9690f98dc
-  mch-id: 1577199501
-  mch-key: 4ff25e1abccf0ddc37b625995aa3532f
-  notify-url: http://crm.51daiqi.com/rbcrm_war_exploded/gw/WxPayNotify
+  app-id: wx133e2db02bbbf048
+  secret: cefe986e0311eb653e03b3d5df8002bd
+  mch-id: 1601453760
+  mch-key: ZjvqngRLscbgfu9jny8IZgjHk1gCLNY1
+  sub-app-id: wx1fc14fbe6d2efdc1
+  sub-mch-id: 1603865805
+  key-path: C:/Users/Admin/Desktop/1601453760_20201127_cert/apiclient_cert.p12
+  notify-url:  http://6deb9d67594b.ngrok.io/rbcrm_war_exploded/gw/wxpay/wxPayNotifyifyUrl
+  refund-notify-url:  http://6deb9d67594b.ngrok.io/rbcrm_war_exploded/gw/wxpay/wxRefundNotifyUrl
+
+

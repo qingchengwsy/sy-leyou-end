@@ -9,30 +9,51 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix ="wechat" )
+@ConfigurationProperties(prefix = "wechat")
 public class WeChatAccountConfig {
 
-    /** 公众平台开发者账号id */
-    public  String appId;
+    /**
+     * 公众平台开发者账号id
+     */
+    private String appId;
 
-    /** 开发者账号对应的密钥 */
-    public  String secret;
+    /**
+     * 开发者账号对应的密钥
+     */
+    private String secret;
 
-    /** 商户号id */
-    public  String mchId;
+    /**
+     * 商户号id
+     */
+    private String mchId;
 
-    /** 商户密钥 */
-    public  String mchKey;
+    /**
+     * 商户密钥
+     */
+    private String mchKey;
 
-    /**服务商模式下的子商户公众账号ID. (服务商)*/
-    private  String subAppId;
+    /**
+     * 服务商模式下的子商户公众账号ID. (服务商)
+     */
+    private String subAppId;
 
-    /**服务商模式下的子商户号. (服务商)*/
-    private  String subMchId;
+    /**
+     * 服务商模式下的子商户号. (服务商)
+     */
+    private String subMchId;
 
-    /** 商户证书地址 (退款需要)*/
-    public  String keyPath;
+    /**
+     * 商户证书地址 (退款需要)
+     */
+    private String keyPath;
 
-    /** 微信支付异步通知地址 */
-    public  String notifyUrl;
+    /**
+     * 支付完成后异步回调地址
+     */
+    private String notifyUrl;
+
+    /**
+     * 申请退款完成后异步回调地址
+     */
+    private String refundNotifyUrl;
 }

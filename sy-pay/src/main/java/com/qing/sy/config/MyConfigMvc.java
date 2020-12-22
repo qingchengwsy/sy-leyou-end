@@ -15,8 +15,8 @@ public class MyConfigMvc implements WebMvcConfigurer{
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("wxpay/pay").setViewName("/pay.html");
-        registry.addViewController("wxpay/fail").setViewName("/fail.html");
-        registry.addViewController("wxpay/success").setViewName("/success.html");
+        registry.addViewController("/gw/wxpay/pay").setViewName("/pay.html");
+        registry.addViewController("/gw/wxpay/fail").setViewName("/fail.html");
+        registry.addViewController("/gw/wxpay/success").setViewName("/success.html");
     }
 }

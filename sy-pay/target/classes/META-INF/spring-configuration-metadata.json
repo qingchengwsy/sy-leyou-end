@@ -34,7 +34,13 @@
     {
       "name": "wechat.notify-url",
       "type": "java.lang.String",
-      "description": "微信支付异步通知地址",
+      "description": "支付完成后异步回调地址",
+      "sourceType": "com.qing.sy.config.WeChatAccountConfig"
+    },
+    {
+      "name": "wechat.refund-notify-url",
+      "type": "java.lang.String",
+      "description": "申请退款完成后异步回调地址",
       "sourceType": "com.qing.sy.config.WeChatAccountConfig"
     },
     {
