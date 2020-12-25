@@ -10,6 +10,7 @@
         <module>sy-item</module>
         <module>sy-gateway</module>
         <module>sy-pay</module>
+        <module>swagger</module>
     </modules>
 
     <name>symall</name>

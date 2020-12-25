@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: spring-boot-starter-swagger
+server:
+  port: 9002
+swagger:
+  # 公共信息
+  enabled: true
+  contact:
+    name: Su.Qing
+    url:  https://github.com/qingchengwsy
+    email: qing.lsy@foxmail.com
+  base-package: com.sy.qing.api
+  #分组策略
+  docket:
+    apiForMe:
+      title: Myself
+      description: 开放给自己的APi
+      exclude-path: /error, /ops/**
+      base-path: /**
+    apiForOthers:
+      title: otherSelf
+                   desctiption: 作为别人的APi
+                   exclude-path: /error, /ops/**
+                   base-path: /**
+  #公共参数
+  global-operation-parameters:
+    - name: TOKEN
+      description: 鉴权
+      modelRef: String
+      parameterType: header
+      required: true
+  apply-default-response-messages: true
+  #返回错误码
+  global-response-message:
+    get:
+      - code: 401
+        message: 401错误
+        modelRef: ERROR
+      - code: 500
+        message: 后端错误
+        modelRef: ERROR
