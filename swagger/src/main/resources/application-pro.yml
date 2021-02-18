@@ -1,0 +1,15 @@
+###-----------------------------nacos注册中和配置中心
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 8.129.115.106:8848
+###----------------------------------------------dubbo配置
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://8.129.115.106
+  cloud:
+    subscribed-services: sy-item-mall

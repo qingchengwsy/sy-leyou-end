@@ -1,10 +1,16 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: sy-item-mall
-
-
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  scan:
+    base-packages: com.sy.qing.dubbo
 ---
 spring:
   cloud:

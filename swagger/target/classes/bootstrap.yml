@@ -1,0 +1,32 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: spring-boot-starter-swagger
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: localhost:8848
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: swagger,dev
+
+
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+  profiles: dev
+---
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 8.129.115.106:8848
+        file-extension: yml
+  profiles: pro

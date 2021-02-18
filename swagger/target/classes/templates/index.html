@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防止xss攻击实例</title>
+</head>
+<body>
+<p><textarea id="address"></textarea></p>
+<p>
+    <input type="button" value="确定" onclick="saveInfo()"/>
+    <input type="button" value="显示" onclick="show()"/>
+</p>
+<p id="output"></p>
+<img src="null" onerror="alert(document.cookie)"/>
+</body>
+<script type="text/javascript">
+    var address=null;
+    function saveInfo() {
+        address= document.getElementById('address').value;
+    }
+    function show() {
+        document.getElementById('output').innerHTML=address;
+    }
+</script>
+</html>

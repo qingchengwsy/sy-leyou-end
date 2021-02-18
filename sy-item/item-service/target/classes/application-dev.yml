@@ -26,3 +26,6 @@ logging:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
+dubbo:
+  registry:
+    address: spring-cloud://localhost
